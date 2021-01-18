@@ -24,8 +24,8 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
         signUpTapped()
-        // Do any additional setup after loading the view.
     }
     
     private func signUpTapped() {
@@ -47,12 +47,14 @@ class SignUpViewController: UIViewController {
                     try! self?.realm.write {
                         self?.realm.add(user)
                     }
+                    self?.showMessage(title: "Great", description: "New user has been added")
+                    self?.navigationController?.popViewController(animated: true)
                 }
             })
             .disposed(by: disposeBag)
     }
     
-    func showMessage(title: String, description: String) {
+    private  func showMessage(title: String, description: String) {
         let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { [weak self] _ in self?.dismiss(animated: true, completion: nil)}))
         present(alert, animated: true, completion: nil)

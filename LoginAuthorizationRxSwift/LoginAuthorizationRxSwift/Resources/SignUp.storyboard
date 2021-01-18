@@ -17,31 +17,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="e29-Bf-JJP">
-                                <rect key="frame" x="20" y="354" width="374" height="152"/>
+                                <rect key="frame" x="20" y="372" width="374" height="152"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKC-M7-3Vs">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="xhz-B2-W4F"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zS-KO-GAV">
                                         <rect key="frame" x="0.0" y="59" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="lR9-wj-0Ya"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9T-Mq-NYC">
                                         <rect key="frame" x="0.0" y="118" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="ctV-lE-aSL"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Itexus_logo" translatesAutoresizingMaskIntoConstraints="NO" id="CZs-2V-53T">
-                                <rect key="frame" x="87" y="134" width="240" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="c2r-w4-hvV"/>
-                                    <constraint firstAttribute="width" constant="240" id="jjE-xC-fZH"/>
-                                </constraints>
+                                <rect key="frame" x="87" y="182" width="240" height="120"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3r1-bz-GFx">
                                 <rect key="frame" x="20" y="782" width="374" height="35"/>
@@ -65,12 +70,15 @@
                             <constraint firstItem="e29-Bf-JJP" firstAttribute="centerX" secondItem="qnW-ZR-QHN" secondAttribute="centerX" id="1PL-Bn-fiZ"/>
                             <constraint firstItem="CZs-2V-53T" firstAttribute="centerX" secondItem="qnW-ZR-QHN" secondAttribute="centerX" id="9Kx-C4-ajc"/>
                             <constraint firstItem="qzD-UE-wQh" firstAttribute="bottom" secondItem="3r1-bz-GFx" secondAttribute="bottom" constant="45" id="IQ1-XQ-JTp"/>
-                            <constraint firstItem="e29-Bf-JJP" firstAttribute="top" secondItem="CZs-2V-53T" secondAttribute="bottom" constant="100" id="LYG-E2-WE0"/>
                             <constraint firstItem="qzD-UE-wQh" firstAttribute="trailing" secondItem="e29-Bf-JJP" secondAttribute="trailing" constant="20" id="NYG-F0-lNW"/>
-                            <constraint firstItem="CZs-2V-53T" firstAttribute="top" secondItem="qzD-UE-wQh" secondAttribute="top" constant="90" id="WtF-Pc-kxy"/>
+                            <constraint firstItem="CZs-2V-53T" firstAttribute="top" relation="lessThanOrEqual" secondItem="qzD-UE-wQh" secondAttribute="top" priority="750" constant="90" id="WtF-Pc-kxy"/>
+                            <constraint firstItem="e29-Bf-JJP" firstAttribute="top" secondItem="CZs-2V-53T" secondAttribute="bottom" constant="70" id="ZOO-uy-itZ"/>
+                            <constraint firstItem="CZs-2V-53T" firstAttribute="width" secondItem="qnW-ZR-QHN" secondAttribute="width" multiplier="0.57971" id="bPh-Or-8c3"/>
                             <constraint firstItem="qzD-UE-wQh" firstAttribute="trailing" secondItem="3r1-bz-GFx" secondAttribute="trailing" constant="20" id="fNh-f2-t81"/>
                             <constraint firstItem="e29-Bf-JJP" firstAttribute="leading" secondItem="qzD-UE-wQh" secondAttribute="leading" constant="20" id="hhM-Ix-5P2"/>
+                            <constraint firstItem="e29-Bf-JJP" firstAttribute="centerY" secondItem="qnW-ZR-QHN" secondAttribute="centerY" id="ksk-0c-REO"/>
                             <constraint firstItem="3r1-bz-GFx" firstAttribute="leading" secondItem="qzD-UE-wQh" secondAttribute="leading" constant="20" id="lcG-8M-4Ca"/>
+                            <constraint firstItem="CZs-2V-53T" firstAttribute="height" secondItem="qnW-ZR-QHN" secondAttribute="height" multiplier="0.133929" id="vCh-mM-0HN"/>
                         </constraints>
                     </view>
                     <connections>
