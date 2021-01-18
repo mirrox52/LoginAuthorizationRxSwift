@@ -21,7 +21,6 @@
 		8CDB33EB25B5FFC800478ADE /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33EA25B5FFC800478ADE /* PasswordViewModel.swift */; };
 		8CDB33F525B6027D00478ADE /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33F425B6027D00478ADE /* EmailViewModel.swift */; };
 		8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33F725B6036800478ADE /* LoginViewModel.swift */; };
-		8CDB33FB25B6070200478ADE /* RealmLogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33FA25B6070200478ADE /* RealmLogInViewModel.swift */; };
 		8CDB340125B60AF000478ADE /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340025B60AF000478ADE /* ApiController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		8CDB33EA25B5FFC800478ADE /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		8CDB33F425B6027D00478ADE /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		8CDB33F725B6036800478ADE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		8CDB33FA25B6070200478ADE /* RealmLogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLogInViewModel.swift; sourceTree = "<group>"; };
 		8CDB340025B60AF000478ADE /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		D108B1255A8D18D18F6A424C /* Pods-LoginAuthorizationRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAuthorizationRxSwift.release.xcconfig"; path = "Target Support Files/Pods-LoginAuthorizationRxSwift/Pods-LoginAuthorizationRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,8 +96,8 @@
 		8C9E86E125B5A33B004ECBBE /* LoginAuthorizationRxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				8CDB33FF25B60AD700478ADE /* Services */,
 				8CDB33C225B5AB0800478ADE /* Application */,
+				8CDB33FF25B60AD700478ADE /* Services */,
 				8CDB33DD25B5FD3300478ADE /* ViewModels */,
 				8CDB33D625B5CAF200478ADE /* Model */,
 				8CDB33C125B5AAF200478ADE /* ViewControllers */,
@@ -152,7 +150,6 @@
 			children = (
 				8CDB33EA25B5FFC800478ADE /* PasswordViewModel.swift */,
 				8CDB33F425B6027D00478ADE /* EmailViewModel.swift */,
-				8CDB33FA25B6070200478ADE /* RealmLogInViewModel.swift */,
 				8CDB33F725B6036800478ADE /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
@@ -283,7 +280,6 @@
 			files = (
 				8C9E86E725B5A33B004ECBBE /* ViewController.swift in Sources */,
 				8CDB33EB25B5FFC800478ADE /* PasswordViewModel.swift in Sources */,
-				8CDB33FB25B6070200478ADE /* RealmLogInViewModel.swift in Sources */,
 				8CDB340125B60AF000478ADE /* ApiController.swift in Sources */,
 				8CDB33E425B5FDD900478ADE /* LoginModel.swift in Sources */,
 				8CDB33F525B6027D00478ADE /* EmailViewModel.swift in Sources */,
