@@ -6,28 +6,56 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RealmSwift
 
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordToConfirmTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    private let disposeBag = DisposeBag()
+    private let realm = try! Realm()
+    private var items: Results<User>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
+        signUpTapped()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func signUpTapped() {
+        signUpButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let email = self?.emailTextField.text,
+                      let password = self?.passwordTextField.text,
+                      let passwordToConfirm = self?.passwordToConfirmTextField.text
+                else { return }
+                if password == passwordToConfirm {
+                    let user = User(value: [email, password])
+                    self?.items = self?.realm.objects(User.self)
+                    for item in self!.items {
+                        if item.email == email {
+                            self?.showMessage(title: "Warning", description: "There is user with this email")
+                            return
+                        }
+                    }
+                    try! self?.realm.write {
+                        self?.realm.add(user)
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
     }
-    */
+    
+    func showMessage(title: String, description: String) {
+        let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { [weak self] _ in self?.dismiss(animated: true, completion: nil)}))
+        present(alert, animated: true, completion: nil)
+    }
 
 }

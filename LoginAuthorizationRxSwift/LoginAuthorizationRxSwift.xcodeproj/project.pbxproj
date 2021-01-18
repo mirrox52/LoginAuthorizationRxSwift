@@ -16,6 +16,7 @@
 		8C9E86EF25B5A33C004ECBBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9E86ED25B5A33C004ECBBE /* LaunchScreen.storyboard */; };
 		8CDB33C525B5AB6000478ADE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDB33C425B5AB6000478ADE /* SignUp.storyboard */; };
 		8CDB33CC25B5B61500478ADE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33CB25B5B61500478ADE /* SignUpViewController.swift */; };
+		8CDB33D825B5CB3B00478ADE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33D725B5CB3B00478ADE /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		8C9E86F025B5A33C004ECBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CDB33C425B5AB6000478ADE /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		8CDB33CB25B5B61500478ADE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8CDB33D725B5CB3B00478ADE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D108B1255A8D18D18F6A424C /* Pods-LoginAuthorizationRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAuthorizationRxSwift.release.xcconfig"; path = "Target Support Files/Pods-LoginAuthorizationRxSwift/Pods-LoginAuthorizationRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,10 +86,11 @@
 		8C9E86E125B5A33B004ECBBE /* LoginAuthorizationRxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				8C9E86F025B5A33C004ECBBE /* Info.plist */,
 				8CDB33C225B5AB0800478ADE /* Application */,
+				8CDB33D625B5CAF200478ADE /* Model */,
 				8CDB33C125B5AAF200478ADE /* ViewControllers */,
 				8CDB33BD25B5AAB200478ADE /* Resources */,
+				8C9E86F025B5A33C004ECBBE /* Info.plist */,
 			);
 			path = LoginAuthorizationRxSwift;
 			sourceTree = "<group>";
@@ -119,6 +122,14 @@
 				8C9E86E425B5A33B004ECBBE /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		8CDB33D625B5CAF200478ADE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB33D725B5CB3B00478ADE /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				8C9E86E725B5A33B004ECBBE /* ViewController.swift in Sources */,
 				8C9E86E325B5A33B004ECBBE /* AppDelegate.swift in Sources */,
 				8CDB33CC25B5B61500478ADE /* SignUpViewController.swift in Sources */,
+				8CDB33D825B5CB3B00478ADE /* User.swift in Sources */,
 				8C9E86E525B5A33B004ECBBE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

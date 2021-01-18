@@ -77,6 +77,7 @@
                         <outlet property="emailTextField" destination="QKC-M7-3Vs" id="TEQ-6o-IV2"/>
                         <outlet property="passwordTextField" destination="9zS-KO-GAV" id="vgI-Tf-5u1"/>
                         <outlet property="passwordToConfirmTextField" destination="P9T-Mq-NYC" id="AfV-ie-Qex"/>
+                        <outlet property="signUpButton" destination="3r1-bz-GFx" id="RnJ-jK-7jl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="423-zx-Mdl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

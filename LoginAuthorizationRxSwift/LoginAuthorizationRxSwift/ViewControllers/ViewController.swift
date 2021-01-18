@@ -37,9 +37,9 @@ class ViewController: UIViewController {
     
     private func signUpTapped() {
         signUpButton.rx.tap
-            .subscribe(onNext: {
+            .subscribe(onNext: { [weak self] in
                 guard let signUpViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { return }
-                self.navigationController?.pushViewController(signUpViewController, animated: true)
+                self?.navigationController?.pushViewController(signUpViewController, animated: true)
             })
             .disposed(by: disposeBag)
     }
