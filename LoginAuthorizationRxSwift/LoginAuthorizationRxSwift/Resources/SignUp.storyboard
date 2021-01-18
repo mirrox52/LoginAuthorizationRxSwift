@@ -11,7 +11,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="e7P-2v-dq5">
             <objects>
-                <viewController id="Bul-Kw-uFf" customClass="SignUpViewController" customModule="LoginAuthorizationRxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bul-Kw-uFf" customClass="SignUpViewController" customModule="LoginAuthorizationRxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qnW-ZR-QHN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

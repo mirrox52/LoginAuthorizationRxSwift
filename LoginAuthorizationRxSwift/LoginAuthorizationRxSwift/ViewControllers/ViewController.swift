@@ -24,8 +24,58 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        signUpTapped()
+    }
+    
+    private func logInTapped() {
+        logInButton.rx.tap
+            .subscribe(onNext: {
+                
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func signUpTapped() {
+        signUpButton.rx.tap
+            .subscribe(onNext: {
+                guard let signUpViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { return }
+                self.navigationController?.pushViewController(signUpViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 
-
+//    private func takeEmailAndPassword() {
+//
+//        let emailInput = emailTextField.rx
+//            .controlEvent(.editingDidEnd)
+//            .map { self.emailTextField.text ?? "" }
+//            .filter{ !$0.isEmpty }
+//            .subscribe(onNext: { text in
+//                print(text)
+//            }, onError: { error in
+//                print(error.localizedDescription)
+//            }, onCompleted: {
+//                print("Completed")
+//            }, onDisposed: {
+//                print("Disposed")
+//            })
+//            .disposed(by: disposeBag)
+//
+//        let passwordInput = PasswordTextField.rx
+//            .controlEvent(.editingDidEnd)
+//            .map { self.PasswordTextField.text ?? "" }
+//            .filter { !$0.isEmpty }
+//            .subscribe(onNext: { text in
+//                print(text)
+//            }, onError: { error in
+//                print(error.localizedDescription)
+//            }, onCompleted: {
+//                print("Completed")
+//            }, onDisposed: {
+//                print("Disposed")
+//            })
+//            .disposed(by: disposeBag)
+//    }
+    
 }
 
