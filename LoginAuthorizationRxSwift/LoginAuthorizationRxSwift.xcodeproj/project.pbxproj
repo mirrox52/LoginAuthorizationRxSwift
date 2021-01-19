@@ -26,6 +26,8 @@
 		8CDB340B25B6E8A600478ADE /* ValidationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */; };
 		8CDB341425B6F2AA00478ADE /* SigUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB341325B6F2AA00478ADE /* SigUpViewModel.swift */; };
 		8CDB341725B6F33C00478ADE /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB341625B6F33C00478ADE /* SignUpModel.swift */; };
+		8CDB342125B757A800478ADE /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB342025B757A800478ADE /* LoginUseCase.swift */; };
+		8CDB342525B757E000478ADE /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB342425B757E000478ADE /* SignUpUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrors.swift; sourceTree = "<group>"; };
 		8CDB341325B6F2AA00478ADE /* SigUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigUpViewModel.swift; sourceTree = "<group>"; };
 		8CDB341625B6F33C00478ADE /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		8CDB342025B757A800478ADE /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		8CDB342425B757E000478ADE /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		D108B1255A8D18D18F6A424C /* Pods-LoginAuthorizationRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAuthorizationRxSwift.release.xcconfig"; path = "Target Support Files/Pods-LoginAuthorizationRxSwift/Pods-LoginAuthorizationRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +108,7 @@
 		8C9E86E125B5A33B004ECBBE /* LoginAuthorizationRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB341E25B7578C00478ADE /* DB */,
 				8CDB340525B6D97E00478ADE /* Extensions */,
 				8CDB33C225B5AB0800478ADE /* Application */,
 				8CDB33FF25B60AD700478ADE /* Services */,
@@ -181,6 +186,23 @@
 				8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8CDB341E25B7578C00478ADE /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB341F25B7579300478ADE /* Use Cases */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		8CDB341F25B7579300478ADE /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB342025B757A800478ADE /* LoginUseCase.swift */,
+				8CDB342425B757E000478ADE /* SignUpUseCase.swift */,
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +333,9 @@
 				8CDB340B25B6E8A600478ADE /* ValidationErrors.swift in Sources */,
 				8CDB340725B6D99F00478ADE /* UIViewController+Rx.swift in Sources */,
 				8CDB341425B6F2AA00478ADE /* SigUpViewModel.swift in Sources */,
+				8CDB342525B757E000478ADE /* SignUpUseCase.swift in Sources */,
 				8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */,
+				8CDB342125B757A800478ADE /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
