@@ -17,8 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    private var email: String?
-    private var password: String?
     let loginViewModel = LoginViewModel()
     
     private let disposeBag = DisposeBag()
@@ -74,6 +72,15 @@ class ViewController: UIViewController {
                 } else {
                     self?.showMessage(title: "Error", description: "no such user")
                 }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func toSignUp() {
+        signUpButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                let signUpViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+                self?.navigationController?.pushViewController(signUpViewController, animated: true)
             })
             .disposed(by: disposeBag)
     }

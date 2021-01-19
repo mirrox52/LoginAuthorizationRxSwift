@@ -18,8 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     private let disposeBag = DisposeBag()
-    private let realm = try! Realm()
-    private var items: Results<User>!
+    private let signUpViewModel = SignUpViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,34 +26,29 @@ class SignUpViewController: UIViewController {
     }
     
     private func bindViewModels() {
+        emailTextField.rx
+            .controlEvent(.editingDidEnd)
+            .map { self.emailTextField.text ?? "" }
+            .filter { !$0.isEmpty }
+            .bind(to: signUpViewModel.emailViewModel.email)
+            .disposed(by: disposeBag)
+        
+        passwordTextField.rx
+            .controlEvent(.editingDidEnd)
+            .map { self.passwordTextField.text ?? "" }
+            .filter { !$0.isEmpty }
+            .bind(to: signUpViewModel.passwordViewModel.password)
+            .disposed(by: disposeBag)
+        
+        passwordToConfirmTextField.rx
+            .controlEvent(.editingDidEnd)
+            .map { self.passwordToConfirmTextField.text ?? "" }
+            .filter { !$0.isEmpty }
+            .bind(to: signUpViewModel.passwordToRepeatViewModel.password)
+            .disposed(by: disposeBag)
+        
         
     }
-    
-//    private func signUpTapped() {
-//        signUpButton.rx.tap
-//            .subscribe(onNext: { [weak self] in
-//                guard let email = self?.emailTextField.text,
-//                      let password = self?.passwordTextField.text,
-//                      let passwordToConfirm = self?.passwordToConfirmTextField.text
-//                else { return }
-//                if password == passwordToConfirm {
-//                    let user = User(value: [email, password])
-//                    self?.items = self?.realm.objects(User.self)
-//                    for item in self!.items {
-//                        if item.email == email {
-//                            self?.showMessage(title: "Warning", description: "There is user with this email")
-//                            return
-//                        }
-//                    }
-//                    try! self?.realm.write {
-//                        self?.realm.add(user)
-//                    }
-//                    self?.showMessage(title: "Great", description: "New user has been added")
-//                    self?.navigationController?.popViewController(animated: true)
-//                }
-//            })
-//            .disposed(by: disposeBag)
-//    }
     
     func showMessage(title: String, description: String) {
         let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
