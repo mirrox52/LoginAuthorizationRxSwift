@@ -25,6 +25,7 @@ class SignUpViewController: UIViewController {
         title = "Sign Up"
         
         bindViewModels()
+        checkSignUp()
     }
     
     private func bindViewModels() {
@@ -67,7 +68,8 @@ class SignUpViewController: UIViewController {
         signUpViewModel.isSuccess
             .subscribe(onNext: { [weak self] sign in
                 if sign {
-                    self?.showMessage(title: "Great", description: "User logged in")
+                    self?.showMessage(title: "Great", description: "User signed up")
+                    self?.navigationController?.popViewController(animated: true)
                 } else {
                     self?.showMessage(title: "Error", description: "user can't sign up")
                 }

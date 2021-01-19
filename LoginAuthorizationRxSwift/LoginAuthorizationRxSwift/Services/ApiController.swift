@@ -41,6 +41,10 @@ class ApiController {
             }
             guard let users = self?.realm.objects(User.self) else {
                 single(.success("User signed up"))
+                let user = User(email: email, password: password)
+                try! self?.realm.write {
+                    self?.realm.add(user)
+                }
                 return Disposables.create()
             }
             for user in users {
