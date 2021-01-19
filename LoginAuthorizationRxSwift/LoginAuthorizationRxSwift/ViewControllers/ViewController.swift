@@ -31,15 +31,13 @@ class ViewController: UIViewController {
     
     private func bindViewModels() {
         emailTextField.rx
-            .controlEvent(.editingDidEnd)
-            .map { self.emailTextField.text ?? "" }
+            .text.orEmpty
             .filter { !$0.isEmpty }
             .bind(to: loginViewModel.emailViewModel.email)
             .disposed(by: disposeBag)
         
         PasswordTextField.rx
-            .controlEvent(.editingDidEnd)
-            .map { self.PasswordTextField.text ?? "" }
+            .text.orEmpty
             .filter { !$0.isEmpty }
             .bind(to: loginViewModel.passwordViewModel.password)
             .disposed(by: disposeBag)

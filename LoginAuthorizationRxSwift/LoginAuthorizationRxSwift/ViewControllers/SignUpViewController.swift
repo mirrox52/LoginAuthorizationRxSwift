@@ -30,22 +30,19 @@ class SignUpViewController: UIViewController {
     
     private func bindViewModels() {
         emailTextField.rx
-            .controlEvent(.editingDidEnd)
-            .map { self.emailTextField.text ?? "" }
+            .text.orEmpty
             .filter { !$0.isEmpty }
             .bind(to: signUpViewModel.emailViewModel.email)
             .disposed(by: disposeBag)
         
         passwordTextField.rx
-            .controlEvent(.editingDidEnd)
-            .map { self.passwordTextField.text ?? "" }
+            .text.orEmpty
             .filter { !$0.isEmpty }
             .bind(to: signUpViewModel.passwordViewModel.password)
             .disposed(by: disposeBag)
         
         passwordToConfirmTextField.rx
-            .controlEvent(.editingDidEnd)
-            .map { self.passwordToConfirmTextField.text ?? "" }
+            .text.orEmpty
             .filter { !$0.isEmpty }
             .bind(to: signUpViewModel.passwordToRepeatViewModel.password)
             .disposed(by: disposeBag)
