@@ -66,6 +66,7 @@ class SignUpViewController: UIViewController {
     
     private func checkSignUp() {
         signUpViewModel.isSuccess
+            .skip(1)
             .subscribe(onNext: { [weak self] sign in
                 if sign {
                     self?.showMessage(title: "Great", description: "User signed up")
