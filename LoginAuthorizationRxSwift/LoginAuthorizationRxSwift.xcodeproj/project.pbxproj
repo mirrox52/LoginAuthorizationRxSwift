@@ -22,6 +22,7 @@
 		8CDB33F525B6027D00478ADE /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33F425B6027D00478ADE /* EmailViewModel.swift */; };
 		8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33F725B6036800478ADE /* LoginViewModel.swift */; };
 		8CDB340125B60AF000478ADE /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340025B60AF000478ADE /* ApiController.swift */; };
+		8CDB340725B6D99F00478ADE /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		8CDB33F425B6027D00478ADE /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		8CDB33F725B6036800478ADE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8CDB340025B60AF000478ADE /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		D108B1255A8D18D18F6A424C /* Pods-LoginAuthorizationRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAuthorizationRxSwift.release.xcconfig"; path = "Target Support Files/Pods-LoginAuthorizationRxSwift/Pods-LoginAuthorizationRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		8C9E86E125B5A33B004ECBBE /* LoginAuthorizationRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB340525B6D97E00478ADE /* Extensions */,
 				8CDB33C225B5AB0800478ADE /* Application */,
 				8CDB33FF25B60AD700478ADE /* Services */,
 				8CDB33DD25B5FD3300478ADE /* ViewModels */,
@@ -161,6 +164,14 @@
 				8CDB340025B60AF000478ADE /* ApiController.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8CDB340525B6D97E00478ADE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				8CDB33CC25B5B61500478ADE /* SignUpViewController.swift in Sources */,
 				8CDB33D825B5CB3B00478ADE /* User.swift in Sources */,
 				8C9E86E525B5A33B004ECBBE /* SceneDelegate.swift in Sources */,
+				8CDB340725B6D99F00478ADE /* UIViewController+Rx.swift in Sources */,
 				8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

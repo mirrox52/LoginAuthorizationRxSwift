@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 class ViewController: UIViewController {
     
@@ -18,64 +19,64 @@ class ViewController: UIViewController {
     
     private var email: String?
     private var password: String?
+    let loginViewModel = LoginViewModel()
     
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
+        bindViewModels()
+        checkLogIn()
+    }
+    
+    private func bindViewModels() {
+        emailTextField.rx
+            .controlEvent(.editingDidEnd)
+            .map { self.emailTextField.text ?? "" }
+            .filter { !$0.isEmpty }
+            .bind(to: loginViewModel.emailViewModel.email)
+            .disposed(by: disposeBag)
         
-        signUpTapped()
-    }
-    
-    private func logInTapped() {
+        PasswordTextField.rx
+            .controlEvent(.editingDidEnd)
+            .map { self.emailTextField.text ?? "" }
+            .filter { !$0.isEmpty }
+            .bind(to: loginViewModel.passwordViewModel.password)
+            .disposed(by: disposeBag)
+        
         logInButton.rx.tap
-            .subscribe(onNext: {
-                
+//            .do { [weak self] in
+//                self?.PasswordTextField.resignFirstResponder()
+//                self?.emailTextField.resignFirstResponder()
+//            }
+            .subscribe(onNext: { [weak self] in
+                guard let flag = self?.loginViewModel.validateLogin() else {
+                    print("Bad email or password")
+                    return
+                }
+                if flag {
+                    self?.loginViewModel.loginUser()
+                }
             })
             .disposed(by: disposeBag)
     }
     
-    private func signUpTapped() {
-        signUpButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                guard let signUpViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { return }
-                self?.navigationController?.pushViewController(signUpViewController, animated: true)
+    private func checkLogIn() {
+        loginViewModel.isSuccess
+            .subscribe(onNext: { log in
+                if log {
+                    print("User logged in")
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        loginViewModel.errorMessage
+            .subscribe(onNext: { error in
+                print(error)
             })
             .disposed(by: disposeBag)
     }
-
-//    private func takeEmailAndPassword() {
-//
-//        let emailInput = emailTextField.rx
-//            .controlEvent(.editingDidEnd)
-//            .map { self.emailTextField.text ?? "" }
-//            .filter{ !$0.isEmpty }
-//            .subscribe(onNext: { text in
-//                print(text)
-//            }, onError: { error in
-//                print(error.localizedDescription)
-//            }, onCompleted: {
-//                print("Completed")
-//            }, onDisposed: {
-//                print("Disposed")
-//            })
-//            .disposed(by: disposeBag)
-//
-//        let passwordInput = PasswordTextField.rx
-//            .controlEvent(.editingDidEnd)
-//            .map { self.PasswordTextField.text ?? "" }
-//            .filter { !$0.isEmpty }
-//            .subscribe(onNext: { text in
-//                print(text)
-//            }, onError: { error in
-//                print(error.localizedDescription)
-//            }, onCompleted: {
-//                print("Completed")
-//            }, onDisposed: {
-//                print("Disposed")
-//            })
-//            .disposed(by: disposeBag)
-//    }
     
 }
 

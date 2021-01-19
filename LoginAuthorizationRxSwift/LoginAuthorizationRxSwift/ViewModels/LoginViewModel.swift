@@ -28,6 +28,13 @@ class LoginViewModel {
         loginModel.email = emailViewModel.email.value
         loginModel.password = passwordViewModel.password.value
         
-        
+        ApiController.shared.logIn(email: loginModel.email, password: loginModel.password)
+            .subscribe(onSuccess: { [weak self] _ in
+                self?.isSuccess.accept(true)
+            }, onError: { [weak self] error in
+                self?.isSuccess.accept(false)
+                self?.errorMessage.accept(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
     }
 }
