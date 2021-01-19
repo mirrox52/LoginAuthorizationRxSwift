@@ -40,10 +40,16 @@ class ViewController: UIViewController {
         
         PasswordTextField.rx
             .controlEvent(.editingDidEnd)
-            .map { self.emailTextField.text ?? "" }
+            .map { self.PasswordTextField.text ?? "" }
             .filter { !$0.isEmpty }
             .bind(to: loginViewModel.passwordViewModel.password)
             .disposed(by: disposeBag)
+        
+//        PasswordTextField.rx
+//            .text.orEmpty
+//            .filter{ !$0.isEmpty }
+//            .bind(to: loginViewModel.emailViewModel.email)
+//            .disposed(by: disposeBag)
         
         logInButton.rx.tap
 //            .do { [weak self] in
@@ -52,11 +58,12 @@ class ViewController: UIViewController {
 //            }
             .subscribe(onNext: { [weak self] in
                 guard let flag = self?.loginViewModel.validateLogin() else {
-                    print("Bad email or password")
                     return
                 }
                 if flag {
                     self?.loginViewModel.loginUser()
+                } else {
+                    self?.showMessage(title: "Error", description: "Bad email or password")
                 }
             })
             .disposed(by: disposeBag)
@@ -64,18 +71,21 @@ class ViewController: UIViewController {
     
     private func checkLogIn() {
         loginViewModel.isSuccess
-            .subscribe(onNext: { log in
+            .skip(1)
+            .subscribe(onNext: { [weak self] log in
                 if log {
-                    print("User logged in")
+                    self?.showMessage(title: "Great", description: "user logged in")
+                } else {
+                    self?.showMessage(title: "Error", description: "no such user")
                 }
             })
             .disposed(by: disposeBag)
-        
-        loginViewModel.errorMessage
-            .subscribe(onNext: { error in
-                print(error)
-            })
-            .disposed(by: disposeBag)
+    }
+    
+    func showMessage(title: String, description: String?) {
+      alert(title: title, text: description)
+        .subscribe()
+        .disposed(by: disposeBag)
     }
     
 }

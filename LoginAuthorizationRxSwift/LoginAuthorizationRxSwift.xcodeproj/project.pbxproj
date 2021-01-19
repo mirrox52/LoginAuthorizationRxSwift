@@ -23,6 +23,7 @@
 		8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB33F725B6036800478ADE /* LoginViewModel.swift */; };
 		8CDB340125B60AF000478ADE /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340025B60AF000478ADE /* ApiController.swift */; };
 		8CDB340725B6D99F00478ADE /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */; };
+		8CDB340B25B6E8A600478ADE /* ValidationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		8CDB33F725B6036800478ADE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8CDB340025B60AF000478ADE /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrors.swift; sourceTree = "<group>"; };
 		D108B1255A8D18D18F6A424C /* Pods-LoginAuthorizationRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAuthorizationRxSwift.release.xcconfig"; path = "Target Support Files/Pods-LoginAuthorizationRxSwift/Pods-LoginAuthorizationRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 			children = (
 				8CDB33D725B5CB3B00478ADE /* User.swift */,
 				8CDB33E325B5FDD900478ADE /* LoginModel.swift */,
+				8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				8CDB33CC25B5B61500478ADE /* SignUpViewController.swift in Sources */,
 				8CDB33D825B5CB3B00478ADE /* User.swift in Sources */,
 				8C9E86E525B5A33B004ECBBE /* SceneDelegate.swift in Sources */,
+				8CDB340B25B6E8A600478ADE /* ValidationErrors.swift in Sources */,
 				8CDB340725B6D99F00478ADE /* UIViewController+Rx.swift in Sources */,
 				8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */,
 			);

@@ -11,9 +11,8 @@ class LoginModel {
     var email: String = ""
     var password: String = ""
     
-    init() {}
-    
-    init(email: String, password: String) {
+    convenience init(email: String, password: String) {
+        self.init()
         self.email = email
         self.password = password
     }

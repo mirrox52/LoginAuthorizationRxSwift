@@ -18,9 +18,10 @@ class LoginViewModel {
     let passwordViewModel = PasswordViewModel()
     
     let isSuccess: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-    let errorMessage: BehaviorRelay<String> = BehaviorRelay(value: "")
     
     func validateLogin() -> Bool {
+        print(emailViewModel.email.value)
+        print(passwordViewModel.password.value)
         return emailViewModel.checkEmail() && passwordViewModel.checkPassword()
     }
     
@@ -29,11 +30,10 @@ class LoginViewModel {
         loginModel.password = passwordViewModel.password.value
         
         ApiController.shared.logIn(email: loginModel.email, password: loginModel.password)
-            .subscribe(onSuccess: { [weak self] _ in
+            .subscribe(onSuccess: { [weak self] message in
                 self?.isSuccess.accept(true)
             }, onError: { [weak self] error in
                 self?.isSuccess.accept(false)
-                self?.errorMessage.accept(error.localizedDescription)
             })
             .disposed(by: disposeBag)
     }
