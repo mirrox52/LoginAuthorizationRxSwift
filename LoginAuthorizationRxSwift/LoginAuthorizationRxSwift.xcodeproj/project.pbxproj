@@ -24,6 +24,8 @@
 		8CDB340125B60AF000478ADE /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340025B60AF000478ADE /* ApiController.swift */; };
 		8CDB340725B6D99F00478ADE /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */; };
 		8CDB340B25B6E8A600478ADE /* ValidationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */; };
+		8CDB341425B6F2AA00478ADE /* SigUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB341325B6F2AA00478ADE /* SigUpViewModel.swift */; };
+		8CDB341725B6F33C00478ADE /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB341625B6F33C00478ADE /* SignUpModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		8CDB340025B60AF000478ADE /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		8CDB340625B6D99F00478ADE /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrors.swift; sourceTree = "<group>"; };
+		8CDB341325B6F2AA00478ADE /* SigUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigUpViewModel.swift; sourceTree = "<group>"; };
+		8CDB341625B6F33C00478ADE /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		D108B1255A8D18D18F6A424C /* Pods-LoginAuthorizationRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAuthorizationRxSwift.release.xcconfig"; path = "Target Support Files/Pods-LoginAuthorizationRxSwift/Pods-LoginAuthorizationRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,7 @@
 			children = (
 				8CDB33D725B5CB3B00478ADE /* User.swift */,
 				8CDB33E325B5FDD900478ADE /* LoginModel.swift */,
+				8CDB341625B6F33C00478ADE /* SignUpModel.swift */,
 				8CDB340A25B6E8A600478ADE /* ValidationErrors.swift */,
 			);
 			path = Model;
@@ -157,6 +162,7 @@
 				8CDB33EA25B5FFC800478ADE /* PasswordViewModel.swift */,
 				8CDB33F425B6027D00478ADE /* EmailViewModel.swift */,
 				8CDB33F725B6036800478ADE /* LoginViewModel.swift */,
+				8CDB341325B6F2AA00478ADE /* SigUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C9E86E725B5A33B004ECBBE /* ViewController.swift in Sources */,
+				8CDB341725B6F33C00478ADE /* SignUpModel.swift in Sources */,
 				8CDB33EB25B5FFC800478ADE /* PasswordViewModel.swift in Sources */,
 				8CDB340125B60AF000478ADE /* ApiController.swift in Sources */,
 				8CDB33E425B5FDD900478ADE /* LoginModel.swift in Sources */,
@@ -303,6 +310,7 @@
 				8C9E86E525B5A33B004ECBBE /* SceneDelegate.swift in Sources */,
 				8CDB340B25B6E8A600478ADE /* ValidationErrors.swift in Sources */,
 				8CDB340725B6D99F00478ADE /* UIViewController+Rx.swift in Sources */,
+				8CDB341425B6F2AA00478ADE /* SigUpViewModel.swift in Sources */,
 				8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

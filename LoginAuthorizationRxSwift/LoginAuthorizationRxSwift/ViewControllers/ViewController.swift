@@ -52,10 +52,6 @@ class ViewController: UIViewController {
 //            .disposed(by: disposeBag)
         
         logInButton.rx.tap
-//            .do { [weak self] in
-//                self?.PasswordTextField.resignFirstResponder()
-//                self?.emailTextField.resignFirstResponder()
-//            }
             .subscribe(onNext: { [weak self] in
                 guard let flag = self?.loginViewModel.validateLogin() else {
                     return

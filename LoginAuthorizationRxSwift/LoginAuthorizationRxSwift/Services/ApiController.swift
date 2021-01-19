@@ -33,10 +33,14 @@ class ApiController {
         }
     }
     
-    func signUp(email: String, password: String) -> Single<Bool> {
-        return Single<Bool>.create{ [weak self] single in
+    func signUp(email: String, password: String, passwordToConfirm: String) -> Single<String> {
+        return Single<String>.create{ [weak self] single in
+            if password != passwordToConfirm {
+                single(.error(ValidationError.passwordsAreNotEqual))
+                return Disposables.create()
+            }
             guard let users = self?.realm.objects(User.self) else {
-                single(.success(true))
+                single(.success("User signed up"))
                 return Disposables.create()
             }
             for user in users {
@@ -49,7 +53,7 @@ class ApiController {
             try! self?.realm.write {
                 self?.realm.add(user)
             }
-            single(.success(true))
+            single(.success("User signed up"))
             return Disposables.create()
         }
     }
