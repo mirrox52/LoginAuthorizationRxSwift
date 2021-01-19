@@ -3,4 +3,54 @@
    uuid = "1F07D07D-FE7B-4A72-BCBE-AC93F458A198"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F98F9CA7-8812-43FB-AB97-9C2689016634"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoginAuthorizationRxSwift/Services/ApiController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "signUp(email:password:passwordToConfirm:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F98F9CA7-8812-43FB-AB97-9C2689016634 - a3494fae7230c810"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoginAuthorizationRxSwift.ApiController.signUp(email: Swift.String, password: Swift.String, passwordToConfirm: Swift.String) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Swift.String&gt;"
+                  moduleName = "LoginAuthorizationRxSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aliaksandr/Documents/GitHub/LoginAuthorizationRxSwift/LoginAuthorizationRxSwift/LoginAuthorizationRxSwift/Services/ApiController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "F98F9CA7-8812-43FB-AB97-9C2689016634 - 2d3481b223eba3cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((RxSwift.SingleEvent&lt;Swift.String&gt;) -&gt; ()) -&gt; RxSwift.Disposable in LoginAuthorizationRxSwift.ApiController.signUp(email: Swift.String, password: Swift.String, passwordToConfirm: Swift.String) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Swift.String&gt;"
+                  moduleName = "LoginAuthorizationRxSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aliaksandr/Documents/GitHub/LoginAuthorizationRxSwift/LoginAuthorizationRxSwift/LoginAuthorizationRxSwift/Services/ApiController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "313">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -23,6 +23,8 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
+        
+        bindViewModels()
     }
     
     private func bindViewModels() {
@@ -47,7 +49,30 @@ class SignUpViewController: UIViewController {
             .bind(to: signUpViewModel.passwordToRepeatViewModel.password)
             .disposed(by: disposeBag)
         
-        
+        signUpButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let flag = self?.signUpViewModel.validateSignUp() else {
+                    return
+                }
+                if flag {
+                    self?.signUpViewModel.signUpUser()
+                } else {
+                    self?.showMessage(title: "Error", description: "Bad email or password")
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func checkSignUp() {
+        signUpViewModel.isSuccess
+            .subscribe(onNext: { [weak self] sign in
+                if sign {
+                    self?.showMessage(title: "Great", description: "User logged in")
+                } else {
+                    self?.showMessage(title: "Error", description: "user can't sign up")
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     func showMessage(title: String, description: String) {

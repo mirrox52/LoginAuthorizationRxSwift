@@ -20,6 +20,9 @@ class SignUpViewModel {
     let isSuccess: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
     func validateSignUp() -> Bool {
+        print(emailViewModel.email.value)
+        print(passwordViewModel.password.value)
+        print(passwordToRepeatViewModel.password.value)
         return emailViewModel.checkEmail() && passwordViewModel.checkPassword() && passwordToRepeatViewModel.checkPassword()
     }
     
@@ -29,9 +32,9 @@ class SignUpViewModel {
         signUpModel.passwordToRepeat = passwordToRepeatViewModel.password.value
         
         ApiController.shared.signUp(email: signUpModel.email, password: signUpModel.password, passwordToConfirm: signUpModel.passwordToRepeat)
-            .subscribe(onSuccess: { [weak self] message in
+            .subscribe(onSuccess: { [weak self] _ in
                 self?.isSuccess.accept(true)
-            }, onError: { [weak self] error in
+            }, onError: { [weak self] _ in
                 self?.isSuccess.accept(false)
             })
             .disposed(by: disposeBag)

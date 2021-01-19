@@ -26,6 +26,7 @@ class ViewController: UIViewController {
 //        print(Realm.Configuration.defaultConfiguration.fileURL)
         bindViewModels()
         checkLogIn()
+        toSignUp()
     }
     
     private func bindViewModels() {
