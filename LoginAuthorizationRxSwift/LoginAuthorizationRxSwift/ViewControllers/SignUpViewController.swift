@@ -68,16 +68,12 @@ extension SignUpViewController {
             .subscribe(onNext: { [weak self] message in
                 self?.alert(title: "Sign Up", text: message)
                     .subscribe(onCompleted: { [weak self] in
-                        self?.navigationController?.popViewController(animated: true)
+                        if message == "User signed up" {
+                            self?.navigationController?.popViewController(animated: true)
+                        }
                     })
                     .disposed(by: self!.disposeBag)
             })
             .disposed(by: disposeBag)
-    }
-    
-    func showMessage(title: String, description: String) {
-        let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { [weak self] _ in self?.dismiss(animated: true, completion: nil)}))
-        present(alert, animated: true, completion: nil)
     }
 }

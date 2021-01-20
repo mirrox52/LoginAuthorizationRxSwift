@@ -58,7 +58,9 @@ private extension ViewController {
         loginViewModel.isSuccess
             .skip(1)
             .subscribe(onNext: { [weak self] message in
-                self?.showMessage(title: "Log In", description: message)
+                self?.alert(title: "Log In", text: message)
+                    .subscribe()
+                    .disposed(by: self!.disposeBag)
             })
             .disposed(by: disposeBag)
     }
@@ -72,10 +74,5 @@ private extension ViewController {
             .disposed(by: disposeBag)
     }
     
-    func showMessage(title: String, description: String?) {
-      alert(title: title, text: description)
-        .subscribe()
-        .disposed(by: disposeBag)
-    }
 }
 
