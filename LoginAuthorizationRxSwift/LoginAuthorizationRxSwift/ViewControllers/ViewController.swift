@@ -48,7 +48,8 @@ private extension ViewController {
         
         logInButton.rx.tap
             .subscribe(onNext: { [weak self] in
-               
+                self?.loginViewModel.driveInput()
+                self?.loginViewModel.logIn()
             })
             .disposed(by: disposeBag)
     }
@@ -56,12 +57,8 @@ private extension ViewController {
     private func checkLogIn() {
         loginViewModel.isSuccess
             .skip(1)
-            .subscribe(onNext: { [weak self] log in
-                if log {
-                    self?.showMessage(title: "Great", description: "user logged in")
-                } else {
-                    self?.showMessage(title: "Error", description: "no such user")
-                }
+            .subscribe(onNext: { [weak self] message in
+                self?.showMessage(title: "Log In", description: message)
             })
             .disposed(by: disposeBag)
     }

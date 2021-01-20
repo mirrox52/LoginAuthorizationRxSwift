@@ -18,7 +18,7 @@ class SignUpUseCase {
     let passwordViewModel = PasswordViewModel()
     let passwordToRepeatViewModel = PasswordViewModel()
     
-    func validateSignUp() -> Single<Bool> {
+    func validateSignUpInput() -> Single<Bool> {
         return Single<Bool>.create { [weak self] single in
             let flag = (self?.emailViewModel.checkEmail() ?? false) && (self?.passwordViewModel.checkPassword() ?? false) && (self?.passwordToRepeatViewModel.checkPassword() ?? false)
             if flag {
