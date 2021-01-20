@@ -56,14 +56,8 @@ extension SignUpViewController {
         
         signUpButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                guard let flag = self?.signUpViewModel.validateSignUp() else {
-                    return
-                }
-                if flag {
-                    self?.signUpViewModel.signUpUser()
-                } else {
-                    self?.showMessage(title: "Error", description: "Bad email or password")
-                }
+                self?.signUpViewModel.driveInput()
+                self?.signUpViewModel.signUp()
             })
             .disposed(by: disposeBag)
     }
@@ -71,13 +65,8 @@ extension SignUpViewController {
     private func checkSignUp() {
         signUpViewModel.isSuccess
             .skip(1)
-            .subscribe(onNext: { [weak self] sign in
-                if sign {
-                    self?.showMessage(title: "Great", description: "User signed up")
-                    self?.navigationController?.popViewController(animated: true)
-                } else {
-                    self?.showMessage(title: "Error", description: "user can't sign up")
-                }
+            .subscribe(onNext: { [weak self] message in
+                self?.showMessage(title: "Sign Up", description: message)
             })
             .disposed(by: disposeBag)
     }
