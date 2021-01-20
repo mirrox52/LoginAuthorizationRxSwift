@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL)
         bindViewModels()
         checkLogIn()
         toSignUp()
@@ -35,13 +35,15 @@ private extension ViewController {
         emailTextField.rx
             .text.orEmpty
             .filter { !$0.isEmpty }
-            .bind(to: loginViewModel.emailViewModel.email)
+            .asDriver(onErrorJustReturn: "")
+            .drive(loginViewModel.emailViewModel.email)
             .disposed(by: disposeBag)
         
         PasswordTextField.rx
             .text.orEmpty
             .filter { !$0.isEmpty }
-            .bind(to: loginViewModel.passwordViewModel.password)
+            .asDriver(onErrorJustReturn: "")
+            .drive(loginViewModel.passwordViewModel.password)
             .disposed(by: disposeBag)
         
         logInButton.rx.tap

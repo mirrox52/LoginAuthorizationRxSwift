@@ -15,6 +15,8 @@ class PasswordViewModel {
     var password: BehaviorRelay<String> = BehaviorRelay(value: "")
     var passwordError: BehaviorRelay<String> = BehaviorRelay(value: "")
     
+    
+    
     func checkPassword() -> Bool {
         if password.value.count >= 6 {
             passwordError.accept(errorMessage)
