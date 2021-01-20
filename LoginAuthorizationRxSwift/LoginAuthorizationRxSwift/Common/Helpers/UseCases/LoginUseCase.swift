@@ -29,19 +29,11 @@ class LoginUseCase {
         }
     }
     
-    func loginUser() -> Single<Bool> {
+    func loginUser() -> Single<String> {
         loginModel.email = emailViewModel.email.value
         loginModel.password = passwordViewModel.password.value
-        return Single<Bool>.create { [weak self] single in
-            ApiController.shared.logIn(email: self?.loginModel.email, password: self?.loginModel.password)
-                .subscribe(onSuccess: { _ in
-                    single(.success(true))
-                }, onError: { error in
-                    single(.error(ValidationError.noSuchUser))
-                })
-                .disposed(by: self?.disposeBag)
-            return Disposables.create()
-        }
+        return ApiController.shared.logIn(email: loginModel.email, password: loginModel.password)
     }
-    
 }
+
+

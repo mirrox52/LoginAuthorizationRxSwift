@@ -30,20 +30,12 @@ class SignUpUseCase {
         }
     }
     
-    func signUpUser() -> Single<Bool> {
+    func signUpUser() -> Single<String> {
         signUpModel.email = emailViewModel.email.value
         signUpModel.password = passwordViewModel.password.value
         signUpModel.passwordToRepeat = passwordToRepeatViewModel.password.value
-        return Single<Bool>.create { [weak self] single in
-            ApiController.shared.signUp(email: self?.signUpModel.email, password: self?.signUpModel.password, passwordToConfirm: self?.signUpModel.passwordToRepeat)
-                .subscribe(onSuccess: { single in
-                    single(.success(true))
-                }, onError: { [weak self] _ in
-                    single(.error(ValidationError.thisEmailAlreadyExists))
-                })
-                .disposed(by: self?.disposeBag)
-            return Disposables.create()
-        }
+        return ApiController.shared.signUp(email: signUpModel.email, password: signUpModel.password, passwordToConfirm: signUpModel.passwordToRepeat)
+        
     }
-    
 }
+    

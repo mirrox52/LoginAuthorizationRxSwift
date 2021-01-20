@@ -113,6 +113,7 @@
 		8C7A21F625B839EE0038E376 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8C7A220A25B85B840038E376 /* UseCases */,
 				8C7A220125B843990038E376 /* RealmAPI */,
 				8C7A21F925B83AAC0038E376 /* Validation */,
 			);
@@ -140,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				8CDB340025B60AF000478ADE /* ApiController.swift */,
-				8C7A220A25B85B840038E376 /* UseCases */,
 			);
 			path = RealmAPI;
 			sourceTree = "<group>";

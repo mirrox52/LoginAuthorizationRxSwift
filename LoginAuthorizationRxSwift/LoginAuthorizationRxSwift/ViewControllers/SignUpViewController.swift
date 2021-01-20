@@ -66,7 +66,11 @@ extension SignUpViewController {
         signUpViewModel.isSuccess
             .skip(1)
             .subscribe(onNext: { [weak self] message in
-                self?.showMessage(title: "Sign Up", description: message)
+                self?.alert(title: "Sign Up", text: message)
+                    .subscribe(onCompleted: { [weak self] in
+                        self?.navigationController?.popViewController(animated: true)
+                    })
+                    .disposed(by: self!.disposeBag)
             })
             .disposed(by: disposeBag)
     }
