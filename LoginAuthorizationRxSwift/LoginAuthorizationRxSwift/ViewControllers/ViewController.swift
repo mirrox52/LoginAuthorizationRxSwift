@@ -17,19 +17,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    let loginViewModel = LoginViewModel()
-    
+    private let loginViewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(Realm.Configuration.defaultConfiguration.fileURL)
-        print(Realm.Configuration.defaultConfiguration.fileURL)
         bindViewModels()
         checkLogIn()
         toSignUp()
     }
     
+}
+
+private extension ViewController {
     private func bindViewModels() {
         emailTextField.rx
             .text.orEmpty
@@ -84,6 +85,5 @@ class ViewController: UIViewController {
         .subscribe()
         .disposed(by: disposeBag)
     }
-    
 }
 

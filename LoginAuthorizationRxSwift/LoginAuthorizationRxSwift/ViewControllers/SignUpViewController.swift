@@ -22,10 +22,17 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Sign Up"
         
+        style()
         bindViewModels()
         checkSignUp()
+    }
+
+}
+
+extension SignUpViewController {
+    private func style() {
+        title = "Sign Up"
     }
     
     private func bindViewModels() {
@@ -80,5 +87,4 @@ class SignUpViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { [weak self] _ in self?.dismiss(animated: true, completion: nil)}))
         present(alert, animated: true, completion: nil)
     }
-
 }
