@@ -10,6 +10,8 @@
 		4ED7D15768AFA0A6001D75E3 /* Pods_LoginAuthorizationRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAC716E16AD21C3BADDE1C1 /* Pods_LoginAuthorizationRxSwift.framework */; };
 		8C7A21F225B839AB0038E376 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A21F125B839AB0038E376 /* Credentials.swift */; };
 		8C7A21FF25B83C530038E376 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A21FE25B83C530038E376 /* ViewModelType.swift */; };
+		8C7A220525B855660038E376 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A220425B855660038E376 /* LoginUseCase.swift */; };
+		8C7A220825B855750038E376 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A220725B855750038E376 /* SignUpUseCase.swift */; };
 		8C9E86E325B5A33B004ECBBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E86E225B5A33B004ECBBE /* AppDelegate.swift */; };
 		8C9E86E525B5A33B004ECBBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E86E425B5A33B004ECBBE /* SceneDelegate.swift */; };
 		8C9E86E725B5A33B004ECBBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E86E625B5A33B004ECBBE /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 		6D94438BBB728E87109CDFAB /* Pods-LoginAuthorizationRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAuthorizationRxSwift.debug.xcconfig"; path = "Target Support Files/Pods-LoginAuthorizationRxSwift/Pods-LoginAuthorizationRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		8C7A21F125B839AB0038E376 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		8C7A21FE25B83C530038E376 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		8C7A220425B855660038E376 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		8C7A220725B855750038E376 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		8C9E86DF25B5A33B004ECBBE /* LoginAuthorizationRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginAuthorizationRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9E86E225B5A33B004ECBBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C9E86E425B5A33B004ECBBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +96,6 @@
 			children = (
 				8C7A21F125B839AB0038E376 /* Credentials.swift */,
 				8C7A21F625B839EE0038E376 /* Helpers */,
-				8C7A21F725B83A680038E376 /* DataBase */,
 				8C7A21F525B839B70038E376 /* Protocols */,
 				8CDB340525B6D97E00478ADE /* Extensions */,
 			);
@@ -116,13 +119,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		8C7A21F725B83A680038E376 /* DataBase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataBase;
-			sourceTree = "<group>";
-		};
 		8C7A21F925B83AAC0038E376 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,8 +140,18 @@
 			isa = PBXGroup;
 			children = (
 				8CDB340025B60AF000478ADE /* ApiController.swift */,
+				8C7A220A25B85B840038E376 /* UseCases */,
 			);
 			path = RealmAPI;
+			sourceTree = "<group>";
+		};
+		8C7A220A25B85B840038E376 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				8C7A220425B855660038E376 /* LoginUseCase.swift */,
+				8C7A220725B855750038E376 /* SignUpUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		8C9E86D625B5A33B004ECBBE = {
@@ -354,6 +360,7 @@
 			files = (
 				8C9E86E725B5A33B004ECBBE /* ViewController.swift in Sources */,
 				8CDB341725B6F33C00478ADE /* SignUpModel.swift in Sources */,
+				8C7A220525B855660038E376 /* LoginUseCase.swift in Sources */,
 				8CDB33EB25B5FFC800478ADE /* PasswordViewModel.swift in Sources */,
 				8CDB340125B60AF000478ADE /* ApiController.swift in Sources */,
 				8CDB33E425B5FDD900478ADE /* LoginModel.swift in Sources */,
@@ -368,6 +375,7 @@
 				8C7A21F225B839AB0038E376 /* Credentials.swift in Sources */,
 				8CDB341425B6F2AA00478ADE /* SigUpViewModel.swift in Sources */,
 				8CDB33F825B6036800478ADE /* LoginViewModel.swift in Sources */,
+				8C7A220825B855750038E376 /* SignUpUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

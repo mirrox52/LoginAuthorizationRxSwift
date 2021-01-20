@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
         bindViewModels()
         checkLogIn()
         toSignUp()
@@ -48,14 +48,7 @@ private extension ViewController {
         
         logInButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                guard let flag = self?.loginViewModel.validateLogin() else {
-                    return
-                }
-                if flag {
-                    self?.loginViewModel.loginUser()
-                } else {
-                    self?.showMessage(title: "Error", description: "Bad email or password")
-                }
+               
             })
             .disposed(by: disposeBag)
     }

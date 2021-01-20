@@ -12,4 +12,5 @@ enum ValidationError: Error {
     case thisEmailAlreadyExists
     case dbIsEmpty
     case passwordsAreNotEqual
+    case invalidInput
 }
