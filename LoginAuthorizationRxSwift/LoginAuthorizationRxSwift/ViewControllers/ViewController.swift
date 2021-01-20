@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL)
         bindViewModels()
         checkLogIn()
         toSignUp()
@@ -41,12 +42,6 @@ class ViewController: UIViewController {
             .filter { !$0.isEmpty }
             .bind(to: loginViewModel.passwordViewModel.password)
             .disposed(by: disposeBag)
-        
-//        PasswordTextField.rx
-//            .text.orEmpty
-//            .filter{ !$0.isEmpty }
-//            .bind(to: loginViewModel.emailViewModel.email)
-//            .disposed(by: disposeBag)
         
         logInButton.rx.tap
             .subscribe(onNext: { [weak self] in

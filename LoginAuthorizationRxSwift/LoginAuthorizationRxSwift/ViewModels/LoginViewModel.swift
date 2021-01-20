@@ -8,7 +8,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import RealmSwift
 
 class LoginViewModel {
     let loginModel: LoginModel = LoginModel()
@@ -20,8 +19,6 @@ class LoginViewModel {
     let isSuccess: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
     func validateLogin() -> Bool {
-        print(emailViewModel.email.value)
-        print(passwordViewModel.password.value)
         return emailViewModel.checkEmail() && passwordViewModel.checkPassword()
     }
     

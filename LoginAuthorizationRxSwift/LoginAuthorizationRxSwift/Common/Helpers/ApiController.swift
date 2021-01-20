@@ -12,13 +12,13 @@ import RealmSwift
 
 class ApiController {
     
-    private let realm = try! Realm()
+    private let realm = try? Realm()
     
     static var shared = ApiController()
     
     func logIn(email: String, password: String) -> Single<String> {
         return Single<String>.create { [weak self] single in
-            guard let users = self?.realm.objects(User.self) else {
+            guard let users = self?.realm?.objects(User.self) else {
                 single(.error(ValidationError.dbIsEmpty))
                 return Disposables.create()
             }
@@ -39,11 +39,11 @@ class ApiController {
                 single(.error(ValidationError.passwordsAreNotEqual))
                 return Disposables.create()
             }
-            guard let users = self?.realm.objects(User.self) else {
+            guard let users = self?.realm?.objects(User.self) else {
                 single(.success("User signed up"))
                 let user = User(email: email, password: password)
-                try! self?.realm.write {
-                    self?.realm.add(user)
+                try! self?.realm?.write {
+                    self?.realm?.add(user)
                 }
                 return Disposables.create()
             }
@@ -54,8 +54,8 @@ class ApiController {
                 }
             }
             let user = User(email: email, password: password)
-            try! self?.realm.write {
-                self?.realm.add(user)
+            try? self?.realm?.write {
+                self?.realm?.add(user)
             }
             single(.success("User signed up"))
             return Disposables.create()
