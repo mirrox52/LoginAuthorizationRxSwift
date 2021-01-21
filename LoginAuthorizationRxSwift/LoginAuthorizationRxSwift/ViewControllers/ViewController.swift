@@ -86,33 +86,33 @@ private extension ViewController {
     }
     
     func bind() {
-//        logInButton.rx.tap
-//            .subscribe(onNext: { [weak self] in
-//                guard let self = self else { return }
-//                print(self.input)
-//                let output = self.transform(input: self.input, to: self.loginViewModel, disposingTo: self.disposeBag)
-//                output.inputErrors.subscribe(onSuccess: { [weak self] _ in
-//                    guard let self = self else { return }
-//                    output.loggedIn.subscribe(onSuccess: { [weak self] message in
-//                        guard let self = self else { return }
-//                        self.alert(title: "Sign up", text: message)
-//                            .subscribe()
-//                            .disposed(by: self.disposeBag)
-//                    }, onError: { [weak self] error in
-//                        guard let self = self else { return }
-//                        self.alert(title: "Sign up", text: error.localizedDescription)
-//                            .subscribe()
-//                            .disposed(by: self.disposeBag)
-//                    })
-//                    .disposed(by: self.disposeBag)
-//                }, onError: { [weak self] error in
-//                    guard let self = self else { return }
-//                    self.alert(title: "Sign up", text: error.localizedDescription)
-//                        .subscribe()
-//                        .disposed(by: self.disposeBag)
-//                })
-//                .disposed(by: self.disposeBag)
-//            })
-//            .disposed(by: disposeBag)
+        logInButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                print(self.input)
+                let output = self.transform(input: self.input, to: self.loginViewModel, disposingTo: self.disposeBag)
+                output.inputErrors.subscribe(onSuccess: { [weak self] _ in
+                    guard let self = self else { return }
+                    output.loggedIn.subscribe(onSuccess: { [weak self] message in
+                        guard let self = self else { return }
+                        self.alert(title: "Sign up", text: message)
+                            .subscribe()
+                            .disposed(by: self.disposeBag)
+                    }, onError: { [weak self] error in
+                        guard let self = self else { return }
+                        self.alert(title: "Sign up", text: error.localizedDescription)
+                            .subscribe()
+                            .disposed(by: self.disposeBag)
+                    })
+                    .disposed(by: self.disposeBag)
+                }, onError: { [weak self] error in
+                    guard let self = self else { return }
+                    self.alert(title: "Sign up", text: error.localizedDescription)
+                        .subscribe()
+                        .disposed(by: self.disposeBag)
+                })
+                .disposed(by: self.disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
 }

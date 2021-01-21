@@ -93,33 +93,34 @@ extension SignUpViewController {
     }
     
     private func bind() {
-//        signUpButton.rx.tap
-//            .subscribe(onNext: { [weak self] in
-//                guard let self = self else { return }
-//                let output = self.transform(input: self.input, to: self.signUpViewModel, disposingTo: self.disposeBag)
-//                output.inputErrors.subscribe(onSuccess: { [weak self] _ in
-//                    guard let self = self else { return }
-//                    output.signedUp.subscribe(onSuccess: { [weak self] message in
-//                        guard let self = self else { return }
-//                        self.alert(title: "Sign Up", text: message)
-//                            .subscribe()
-//                            .disposed(by: self.disposeBag)
-//                    }, onError: { [weak self] error in
-//                        guard let self = self else { return }
-//                        self.alert(title: "Sign Up", text: error.localizedDescription)
-//                            .subscribe()
-//                            .disposed(by: self.disposeBag)
-//                    })
-//                    .disposed(by: self.disposeBag)
-//                }, onError: { [weak self] error in
-//                    guard let self = self else { return }
-//                    self.alert(title: "Sign Up", text: error.localizedDescription)
-//                        .subscribe()
-//                        .disposed(by: self.disposeBag)
-//                })
-//                .disposed(by: self.disposeBag)
-//            })
-//            .disposed(by: disposeBag)
+        
+        signUpButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                let output = self.transform(input: self.input, to: self.signUpViewModel, disposingTo: self.disposeBag)
+                output.inputErrors.subscribe(onSuccess: { [weak self] _ in
+                    guard let self = self else { return }
+                    output.signedUp.subscribe(onSuccess: { [weak self] message in
+                        guard let self = self else { return }
+                        self.alert(title: "Sign Up", text: message)
+                            .subscribe()
+                            .disposed(by: self.disposeBag)
+                    }, onError: { [weak self] error in
+                        guard let self = self else { return }
+                        self.alert(title: "Sign Up", text: error.localizedDescription)
+                            .subscribe()
+                            .disposed(by: self.disposeBag)
+                    })
+                    .disposed(by: self.disposeBag)
+                }, onError: { [weak self] error in
+                    guard let self = self else { return }
+                    self.alert(title: "Sign Up", text: error.localizedDescription)
+                        .subscribe()
+                        .disposed(by: self.disposeBag)
+                })
+                .disposed(by: self.disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
     
 }
