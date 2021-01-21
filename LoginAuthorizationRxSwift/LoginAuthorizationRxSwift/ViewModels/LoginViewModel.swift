@@ -9,33 +9,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-//class LoginViewModel {
-//    let loginModel: LoginModel = LoginModel()
-//    let disposeBag = DisposeBag()
-//
-//    let emailViewModel = EmailViewModel()
-//    let passwordViewModel = PasswordViewModel()
-//
-//    let isSuccess: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-//
-//    func validateLogin() -> Bool {
-//        return emailViewModel.checkEmail() && passwordViewModel.checkPassword()
-//    }
-//
-//    func loginUser() {
-//        loginModel.email = emailViewModel.email.value
-//        loginModel.password = passwordViewModel.password.value
-//
-//        ApiController.shared.logIn(email: loginModel.email, password: loginModel.password)
-//            .subscribe(onSuccess: { [weak self] message in
-//                self?.isSuccess.accept(true)
-//            }, onError: { [weak self] error in
-//                self?.isSuccess.accept(false)
-//            })
-//            .disposed(by: disposeBag)
-//    }
-//}
-
 class LoginViewModel {
     let isSuccess: BehaviorRelay<String> = BehaviorRelay(value: "")
     let emailViewModel = EmailViewModel()
