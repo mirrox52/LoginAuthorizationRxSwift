@@ -33,12 +33,8 @@ class ApiController {
         }
     }
     
-    func signUp(email: String, password: String, passwordToConfirm: String) -> Single<String> {
+    func signUp(email: String, password: String) -> Single<String> {
         return Single<String>.create{ [weak self] single in
-            if password != passwordToConfirm {
-                single(.error(ValidationError.passwordsAreNotEqual))
-                return Disposables.create()
-            }
             guard let users = self?.realm?.objects(User.self) else {
                 single(.success("User signed up"))
                 let user = User(email: email, password: password)

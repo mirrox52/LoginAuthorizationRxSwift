@@ -8,5 +8,6 @@ target 'LoginAuthorizationRxSwift' do
   pod 'RxSwift', '5.1.1'
   pod 'RxCocoa', '5.1.1'
   pod 'RealmSwift'
+  pod 'Action'
 
 end
